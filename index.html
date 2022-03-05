@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Programa de Inglés</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="extras/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="extras/bootstrap/css/slider/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="extras/font-awesome/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Oswald:200,300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" id="cssArchivoCss" href="css/estilos.css" />
+</head>
+
+<body id="page-top">
+    <div id="informacion">
+        <div id="incrementoTexto">
+            <div class="container logos">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 special">
+                        <a href="https://www.unam.mx/" target="_blank"> <img class="imgContNormal" src="img/logos/logo_unam.svg" alt="UNAM" style="width: 96px; margin: 14px 10px 0 0;"> <img class="imgContAltoC" src="img/logos/logo_unam_ac.svg" alt="UNAM" style="width: 96px; margin: 14px 10px 0 0;"> </a>
+                        <a href="http://www.facmed.unam.mx/" target="_blank"> <img class="imgContNormal" src="img/logos/logo_medicina.svg" alt="FACMED" style="width: 96px; margin: 14px 0;"> <img class="imgContAltoC" src="img/logos/logo_medicina_acce.svg" alt="FACMED" style="width:96px; margin: 14px 0;"> </a>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <ul>
+                            <li><a href="" data-toggle="modal" data-target="#myModal1"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><br/>Requerimientos<br/>técnicos</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><br/>Informes /<br/>contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Accesibilidad-->
+            <div class="row grey">
+                <div class="container">
+                    <div class="col">
+                        <ul class="menuAccesible">
+                            <li class="primerli"><a onclick="cambiarArchivoCss('css/estilos.css');"> <img class="imgContNormal" src="img/accesibilidad/accesible01.png" title="Contraste normal" alt="Contraste normal"/> <img class="imgContAltoC" src="img/accesibilidad/accesible01_acce.png" title="Contraste normal" alt="Contraste normal"/> </a></li>
+                            <li><a onclick="cambiarArchivoCss('css/accesible.css');"> <img class="imgContNormal" src="img/accesibilidad/accesible02.png" title="Alto contraste" alt="Alto contraste"/> <img class="imgContAltoC" src="img/accesibilidad/accesible02_acce.png" title="Alto contraste" alt="Alto contraste"/> </a></li>
+                            <li><a onclick="zoomText('decrease','incrementoTexto')"> <img class="imgContNormal" src="img/accesibilidad/accesible03.png" title="Disminuye el tamaño del texto" alt="Disminuye el tamaño del texto"/> <img class="imgContAltoC" src="img/accesibilidad/accesible03_acce.png" title="Disminuye el tamaño del texto" alt="Disminuye el tamaño del texto"/> </a></li>
+                            <li><a onclick="zoomText('increase','incrementoTexto')"> <img class="imgContNormal" src="img/accesibilidad/accesible05.png" title="Aumenta el tamaño del texto" alt="Aumenta el tamaño del texto"/> <img class="imgContAltoC" src="img/accesibilidad/accesible05_acce.png" title="Aumenta el tamaño del texto" alt="Aumenta el tamaño del texto"/> </a></li>
+                            <li><a onclick="imprimir()"> <img class="imgContNormal" src="img/accesibilidad/accesible06.png" title="Imprimir" alt="Imprimir"/> <img class="imgContAltoC" src="img/accesibilidad/accesible06_acce.png" title="Imprimir" alt="Imprimir"/></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--termina accesibilidad-->
+            <!-- Header -->
+            <header class="masthead">
+                <div class="container">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <h1 class="title">Programa de Inglés</h1>
+                        <form class="form-2" id="facceso" name="facceso" method="post" action="">
+                            <div class="accesar">
+                                <p>Acceso</p>
+                                <div class="input-group input-group-lg"> <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                    <input class="form-control" type="text" id="username" name="username" placeholder="Usuario">
+                                </div>
+                                <br/>
+                                <div class="input-group input-group-lg"> <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                                    <input class="form-control" type="password" id="password" name="password" placeholder="Contraseña">
+                                </div>
+                                <div class="bottom btn">
+                                    <input class="entrar" type="submit" id="enviar" name="enviar" onClick="peticion();" value="Enviar">
+								</div>
+                                <input type="hidden" name="testcookies" value="0">
+                                <input name="id_course" type="hidden" id="id_course" value="" />
+                                <input name="url_course" type="hidden" id="url_course" value="" />
+                                <input name="etiqueta" type="hidden" id="etiqueta" value="" />
+                                <input name="shortname" type="hidden" id="shortname" value="" />
+                                <input name="recurso" type="hidden" id="recurso" value="" />
+                                <input name="tiporecurso" type="hidden" id="tiporecurso" value="" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </header>
+            <a href="#" class="scrollToTop"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a>
+
+            <!-- Modal 4 -->
+            <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="creditos-modal">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Créditos</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">
+                                            <h4>Facultad de Medicina</h4>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación general </td>
+                                        <td class="light-border">Germán E. Fajardo Dolci<br>Irene Durante Montiel</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Coordinación del Programa de Inglés </td>
+                                        <td class="light-border">Larissa Jannet Pérez Escobedo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación del proyecto </td>
+                                        <td class="light-border">Lilia E. Macedo de la Concha</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Coordinación de desarrollo </td>
+                                        <td class="light-border"> Cristina Huerta Mendoza </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación académica </td>
+                                        <td class="light-border">Larissa Jannet Pérez Escobedo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Soporte tecnológico </td>
+                                        <td class="light-border">David Limón Cruz</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Elaboración de contenidos del curso<br><em>Comprensión de Lectura en Inglés</em><br></td>
+                                        <td class="light-border">
+                                            Andrea Lorena Ballesteros Martínez<br> Concepción Haydeé Coria Galindo<br> Miguel Antonio Gutiérrez Pérez<br> Bruno Castillo Hermida<br> María de los Ángeles Hernández Arciga<br> Joaquín Valentín Morales García<br> Larissa Jannet Pérez Escobedo<br> María Luisa Pérez Tovar
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Elaboración de contenidos del curso<br><em>Comprensión de Textos Médicos en Inglés</em><br></td>
+                                        <td class="light-border">
+                                            Concepción Haydeé Coria Galindo<br>
+Bruno Castillo Hermida<br>
+María de los Ángeles Hernández Arciga<br>
+Claudia Erika Ortíz Mendoza<br>
+Larissa Jannet Pérez Escobedo
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Elaboración de contenidos del curso<br><em>Comprensión de Textos de Neurociencias en Inglés</em><br></td>
+                                        <td class="light-border">
+                                            Concepción Haydeé Coria Galindo<br>
+Bruno Castillo Hermida<br>
+María de los Ángeles Hernández Arciga<br>
+Claudia Erika Ortíz Mendoza<br>
+Larissa Jannet Pérez Escobedo
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Corrección de estilo de los contenidos en inglés<br></td>
+                                        <td class="light-border"> Larissa Jannet Pérez Escobedo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Apoyo al Programa de Inglés<br></td>
+                                        <td class="light-border">Solymar Adame Rivas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">
+                                            <h4>Coordinación de Universidad Abierta y Educación a Distancia</h4>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Coordinación del proyecto </td>
+                                        <td class="light-border"> Jorge León Martínez</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación de desarrollo </td>
+                                        <td class="light-border"> Edith Tapia Rangel</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Administración del proyecto </td>
+                                        <td class="light-border"> Maricarmen Hernández Cervantes </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación de asesoría pedagógica y diseño instruccional </td>
+                                        <td class="light-border"> Elisa Campero Malo<br>Susana Claudio Vargas</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Asesoría pedagógica y diseño instruccional </td>
+                                        <td class="light-border"> Andrea Lorena Ballesteros Martínez </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación de corrección de estilo<br></td>
+                                        <td class="light-border"> Brenda Gómez Sánchez </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Corrección de estilo de los contenidos en español<br></td>
+                                        <td class="light-border"> Gabriel Alfonso Baldo Romero</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dark-table"> Coordinación de diseño gráfico e integración<br></td>
+                                        <td class="light-border"> Juan de Dios Fuentes Reyes<br>Fabiola Moncada Cortés </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="light-table"> Diseño gráfico e integración<br></td>
+                                        <td class="light-border"> Karla Moreno García<br> Eduardo Perusquia Hernández<br>Marcela Guerrero Robles </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-2 col-lg-2">
+                            <h6>Desarrollado por:</h6>
+                            <a href="http://web.cuaed.unam.mx/" target="_blank"> <img src="img/logos/logo_cuaed_footer.svg" alt="CUAED" style="width: 217px; padding: 0;"> </a> </div>
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                            <h6>Aviso</h6>
+                            <p class="hecho">Coordinación de Universidad Abierta y Educación a Distancia-UNAM. ©Todos los derechos reservados, 2017. Hecho en México. Este sitio puede ser reproducido con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica; de otra forma, se requiere permiso previo por escrito de la institución.</p>
+                        </div>
+                        <div class="col-sm-12 col-md-2 col-lg-2">
+                            <ul class="creditos">
+                                <li><a href="" data-toggle="modal" data-target="#myModal3">Directorio</a></li>
+                                <li><a href="" data-toggle="modal" data-target="#myModal4">Créditos</a></li>
+                                <li><a href="" data-toggle="modal" data-target="#myModal5">Aviso de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal 1 -->
+                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Requerimientos técnicos</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Para visualizar correctamente los contenidos de los cursos que ofrece el Programa de Inglés de la Facultad de Medicina, es recomendable contar con los siguientes requerimientos:</p>
+                                <p><strong><em>Hardware</em></strong></p>
+                                <ul>
+                                    <li>Computadora portátil o de escritorio y tabletas de siete pulgadas o superior con acceso a Internet</li>
+                                    <li>Accesorios multimedia: bocinas, micrófono (o diadema con micrófono) y cámara web</li>
+                                </ul>
+                                <p><strong><em>Software</em></strong></p>
+                                <ul>
+                                    <li>Navegador actualizado (preferentemente Google Chrome o Firefox con cookies habilitadas)<br/>
+                                        <a href="https://www.google.com/chrome/" target="_blank"><img class="normal" src="img/software01.jpg" alt="Google Chrome" title="Google Chrome" width="63" /></a>
+                                        <a href="https://www.mozilla.org/es-MX/firefox/new/" target="_blank"><img class="normal" src="img/software02.jpg" alt="Firefox" title="Firefox"  width="63"/></a></li>
+                                    <li>Acrobat Reader actualizado</li>
+                                    <li>Conexión a Internet de banda ancha</li>
+                                </ul>
+                                <p><strong>Notas</strong></p>
+                                <p>Todas las versiones de navegadores pueden ser descargadas gratuitamente de Internet.</p>
+                                <p>Las páginas bajo el nombre “<a href="https://www.unam.mx/" target="_blank">unam.mx</a>”, “<a href="http://www.facmed.unam.mx/" target="_blank">facmed.unam.mx</a>” y “<a href="http://web.cuaed.unam.mx/" target="_blank">cuaed.unam.mx</a>” deben estar habilitadas como sitios de confianza y permitir las ventanas emergentes (la configuración varía dependiendo del navegador).</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal 2 -->
+                <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle2">Informes/ contacto</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Si deseas obtener información sobre los cursos del Programa de Inglés de la Facultad de Medicina, llena el siguiente formulario:</p>
+                                <form name="fcontacto2" class="informes">
+                                    <div>
+                                        <label for="nombre">Nombre:</label>
+                                        <input type="text" id="nombre" name="nombre" />
+                                    </div>
+                                    <div>
+                                        <label for="email">Correo electrónico:</label>
+                                        <input type="email" id="email" name="email" />
+                                    </div>
+                                    <div>
+                                        <label for="mensaje">Información solicitada, comentario, sugerencia o duda:</label>
+                                        <textarea id="mensaje" name="mensaje"></textarea>
+                                    </div>
+                                    <!--button type="submit" class="entrar">Enviar</button//-->
+                                    <input type="hidden" id="titulo" name="titulo" value="Programa de Inglés" />
+                                    <div class="entrar" onclick="enviarContacto();">Enviar</div>
+                                </form>
+                                <div id="estado_mensaje" style="text-align: center; color:red; font-weight: bold;"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal 3 -->
+                <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle1">Directorio</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 col-lg-4">
+                                        <iframe src="directorio/directorio_unam.html" width="100%" height="100%" frameborder="0"></iframe>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-4">
+                                        <iframe src="directorio/directorio_medicina.html" width="100%" height="100%" frameborder="0"></iframe>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-4">
+                                        <iframe src="directorio/directorio_cuaed.html" width="100%" height="100%" frameborder="0"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal 5 -->
+                <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="">Aviso de privacidad</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe src="http://proyectos.cuaed.unam.mx/aviso-privacidad/" width="100%" height="500px" style="border: 0;"></iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <script src="extras/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="js/configCurso.js"></script>
+            <script type="text/javascript">
+                var xAt;
+                xAt = $(document);
+                xAt.ready(inicia_principal);
+
+                function inicia_principal() {
+                    xAt.keypress(function(event) {
+                        if (event.keyCode == 13) {
+                            peticion();
+                        }
+                    });
+                    document.facceso.action = wwwroot + modPortal + "index.html";
+                }
+
+                function verifica() {
+                    var dato1 = document.facceso.username.value;
+                    var dato2 = document.facceso.password.value;
+                    if ((dato1.length > 0) && (dato2.length > 0))
+                        return true;
+                    return false;
+                }
+
+                function peticion() {
+                    if (verifica()) {
+                        var destino = wwwroot 
+                        document.facceso.action = destino;
+                        document.facceso.url_course.value = wwwpublica;
+                        document.facceso.id_course.value = cursoId;
+                        document.facceso.shortname.value = shortname;
+                        document.facceso.etiqueta.value = etiqueta;
+                        document.facceso.recurso.value = recurso;
+                        document.facceso.tiporecurso.value = tiporecurso;
+                        document.facceso.submit();
+                    } else {}
+                }
+            </script>
+            
+            <script>
+      
+
+                function enviarContacto(){
+                    //action="moodle/portal/contacto.php"
+                    var  nombre = document.fcontacto2.nombre.value;
+                    var  email = document.fcontacto2.email.value;
+                    var  mensaje = document.fcontacto2.mensaje.value;
+                    var  titulo = document.fcontacto2.titulo.value;
+                    //valor = valor.replace(/Â¿|\?/g,''); // eliminamos desde aqui el char ?|Â¿
+
+
+
+                    console.log("nombre:: "+nombre+" email="+email);
+                    console.log("contacto.php");
+                    if(email.length > 0){
+                        $('#estado_mensaje').html("Espere un momento...");
+                        console.log("Enviando:: ");
+                        $.ajax({  
+                                type: "GET",
+                                url: wwwroot + modPortal +"contacto.php",  
+                                data: "nombre="+nombre+"&email="+email+"&titulo="+titulo+"&mensaje="+mensaje,
+                                success: function(data) {  
+                                    $('#estado_mensaje').html("<br />"+data); // carga datos de respuesta   
+                                }
+                                ,
+                                    error:function(xhr){
+                                    //alert(xhr.status+"_ERROR"); // error de peticion
+                                    $('#estado_mensaje').append(xhr.status+"_ERROR");
+                                }
+                            });
+
+                    }//fin if
+
+                    document.fcontacto2.reset(); // limpiar el formulario
+                }
+     
+            </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="extras/jquery-easing/jquery.easing.min.js"></script>
+
+<script src="extras/popper/popper.min.js"></script>
+            <script src="extras/bootstrap/js/bootstrap.min.js"></script>
+           
+   <script src="extras/bootstrap/js/slider/jquery.min.js"></script>
+            <script src="extras/bootstrap/js/slider/bootstrap.min.js"></script>
+            <script src="extras/bootstrap/js/slider/flechas.js"></script>    
+            <script src="js/jqBootstrapValidation.js"></script>
+            <script src="js/contact_me.js"></script>
+   
+            <script src="js/agency.min.js"></script>
+            <script src="js/scroll.js"></script>
+            <script src="js/accesibilidad.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
